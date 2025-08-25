@@ -90,7 +90,7 @@ nav .navlinks li a{
 nav .navlinks li a.active {
     color: var(--text-dark);
     font-weight: 600;
-    background-color: #f4debf; /
+    background-color: #f4debf; 
     border-radius: 5px;
     transition: 0.3s;
 }
