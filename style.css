@@ -30,23 +30,21 @@
 body{
     overflow-x: hidden;
     background-color: var(--primary-bg);
-    padding-top: 100px; /* 内容顶部padding，避免被固定导航栏遮挡 */
 }
 
 /* ================= Header / Navigation ================= */
 header{
-    width: 100%;
-    position: fixed;       /* 固定导航栏在顶部 */
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: var(--primary-bg); /* 背景颜色 */
-    padding: 15px 50px;   /* 内边距 */
+    padding: 10px 50px;
     display: flex;
     justify-content: space-between;
     align-items:center;
     flex-wrap:wrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* 可选：轻微阴影 */
+    position: fixed; /* 固定导航栏 */
+    top: 0;
+    width: 100%;
+    background-color: #f4debf; /* 导航栏背景色 */
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .logo{
@@ -85,14 +83,15 @@ nav .navlinks li a{
     color: var(--text-dark);
     font-weight: 500;
     position: relative;
+    padding: 5px 10px;
 }
 
 /* Navigation active link highlight */
 nav .navlinks li a.active {
-    color: var(--skyblue);
+    color: var(--text-dark);
     font-weight: 600;
-    border-bottom: 2px solid var(--skyblue);
-    padding-bottom: 3px;
+    background-color: #f4debf; /* 高亮背景色 */
+    border-radius: 5px;
     transition: 0.3s;
 }
 
@@ -111,6 +110,12 @@ nav .navlinks li a:hover::after {
     width: 100%;
 }
 
+/* ================= Sections ================= */
+/* 给正文内容增加顶部 padding，避免被固定导航栏遮挡 */
+.wrapper, .skills-container, .portfolio-container, .hero-header {
+    padding-top: 120px; /* 根据导航栏高度调整 */
+}
+
 /* ================= Hero Section ================= */
 .hero-header{
     width:100%;
@@ -120,7 +125,7 @@ nav .navlinks li a:hover::after {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4rem 20px;
+    padding: 4rem 20px 2rem 20px;
 }
 
 .hero-text h5{
@@ -179,23 +184,6 @@ nav .navlinks li a:hover::after {
     transform: rotate(360deg);
 }
 
-/* ================= Sections ================= */
-.wrapper{
-    width: 90%;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.wrapper h2{
-    color: var(--blue);
-    margin-bottom: 20px;
-}
-
-.wrapper, .skills-container, .portfolio-container, .hero-header {
-    padding-top: 100px;
-}
-
 /* ================= Skills ================= */
 .skills-container{
     max-width: 1000px;
@@ -234,7 +222,9 @@ nav .navlinks li a:hover::after {
     color: #fff;
 }
 
-/* ================= Experience / Timeline ================= */
+/* ================= Experience ================= */
+
+/* Timeline Container */
 .timeline {
     position: relative;
     max-width: 1000px;
@@ -242,7 +232,7 @@ nav .navlinks li a:hover::after {
     padding: 0 20px;
 }
 
-/* Vertical line */
+/* Vertical line in the middle */
 .timeline::after {
     content: '';
     position: absolute;
@@ -254,7 +244,7 @@ nav .navlinks li a:hover::after {
     margin-left: -2px;
 }
 
-/* Timeline items */
+/* Timeline item */
 .timeline-item {
     padding: 20px 30px;
     position: relative;
@@ -271,14 +261,9 @@ nav .navlinks li a:hover::after {
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
-/* Left / Right positions */
-.timeline-item.left {
-    left: 0;
-}
-
-.timeline-item.right {
-    left: 50%;
-}
+/* Position left/right */
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
 
 /* Timeline circle */
 .timeline-item::before {
@@ -292,34 +277,16 @@ nav .navlinks li a:hover::after {
     background-color: var(--blue);
 }
 
-/* Circle color for left/right */
 .timeline-item.left::before { right: -10px; }
 .timeline-item.right::before { left: -10px; }
 
-/* Text inside timeline */
-.timeline-item h3 {
-    color: var(--blue);
-    margin-bottom: 5px;
-}
+/* Text inside item */
+.timeline-item h3 { color: var(--blue); margin-bottom: 5px; }
+.timeline-item .job-duration { font-size: 0.9rem; color: #555; margin-bottom: 10px; display: block; }
+.timeline-item p, .timeline-item ul li { color: var(--text-dark); line-height: 1.5; }
 
-.timeline-item .job-duration {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.timeline-item p, .timeline-item ul li {
-    color: var(--text-dark);
-    line-height: 1.5;
-}
-
-/* Education vs Work color */
-.timeline.education .timeline-item::before { background-color: var(--skyblue); }
-.timeline.work .timeline-item::before { background-color: var(--blue); }
-
-/* Responsive timeline */
-@media screen and (max-width: 768px) {
+/* Responsive */
+@media screen and (max-width: 768px){
     .timeline::after { left: 20px; }
     .timeline-item {
         width: 100%;
@@ -329,6 +296,10 @@ nav .navlinks li a:hover::after {
     .timeline-item.right { left: 0; }
     .timeline-item.left::before, .timeline-item.right::before { left: 0; right: auto; }
 }
+
+/* Optional: Different colors for Education vs Internships */
+.timeline.education .timeline-item::before { background-color: var(--skyblue); }
+.timeline.work .timeline-item::before { background-color: var(--blue); }
 
 /* ================= Portfolio ================= */
 .portfolio-container{
@@ -373,10 +344,5 @@ nav .navlinks li a:hover::after {
 }
 
 /* ================= Contact ================= */
-.wrapper a{
-    color: var(--blue);
-}
-
-.wrapper a:hover{
-    color: var(--skyblue);
-}
+.wrapper a{ color: var(--blue); }
+.wrapper a:hover{ color: var(--skyblue); }
