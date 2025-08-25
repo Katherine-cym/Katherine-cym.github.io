@@ -17,8 +17,6 @@
     --text-light:#fff;
 }
 
-
-
 /* ================= Reset ================= */
 *{
     box-sizing: border-box;
@@ -32,19 +30,23 @@
 body{
     overflow-x: hidden;
     background-color: var(--primary-bg);
+    padding-top: 100px; /* 内容顶部padding，避免被固定导航栏遮挡 */
 }
 
 /* ================= Header / Navigation ================= */
 header{
-    padding: 10px 50px;
+    width: 100%;
+    position: fixed;       /* 固定导航栏在顶部 */
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: var(--primary-bg); /* 背景颜色 */
+    padding: 15px 50px;   /* 内边距 */
     display: flex;
     justify-content: space-between;
     align-items:center;
     flex-wrap:wrap;
-    position: sticky;
-    top: 0;
-    background: transparent;
-    z-index: 999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* 可选：轻微阴影 */
 }
 
 .logo{
@@ -85,7 +87,6 @@ nav .navlinks li a{
     position: relative;
 }
 
-
 /* Navigation active link highlight */
 nav .navlinks li a.active {
     color: var(--skyblue);
@@ -94,7 +95,6 @@ nav .navlinks li a.active {
     padding-bottom: 3px;
     transition: 0.3s;
 }
-
 
 nav .navlinks li a::after {
     content: "";
@@ -229,23 +229,16 @@ nav .navlinks li a:hover::after {
     background: var(--blue);
     color: #fff;
 }
-/* ================= Experience ================= */
-/* Timeline Container */
+
+/* ================= Experience / Timeline ================= */
 .timeline {
     position: relative;
     max-width: 1000px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Space between timelines */
-.timeline.work {
-    margin-bottom: 60px;
-}
-.timeline.education {
-    margin-top: 40px;
-}
-
-/* Vertical line in the middle */
+/* Vertical line */
 .timeline::after {
     content: '';
     position: absolute;
@@ -257,7 +250,7 @@ nav .navlinks li a:hover::after {
     margin-left: -2px;
 }
 
-/* Timeline item */
+/* Timeline items */
 .timeline-item {
     padding: 20px 30px;
     position: relative;
@@ -274,9 +267,14 @@ nav .navlinks li a:hover::after {
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
-/* Position left/right */
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
+/* Left / Right positions */
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
 
 /* Timeline circle */
 .timeline-item::before {
@@ -287,22 +285,36 @@ nav .navlinks li a:hover::after {
     border-radius: 50%;
     top: 20px;
     z-index: 1;
+    background-color: var(--blue);
 }
 
-/* Circle colors for different timelines */
-.timeline.work .timeline-item::before { background-color: var(--blue); }
-.timeline.education .timeline-item::before { background-color: var(--skyblue); }
-
-/* Circle positioning */
+/* Circle color for left/right */
 .timeline-item.left::before { right: -10px; }
 .timeline-item.right::before { left: -10px; }
 
-/* Text inside item */
-.timeline-item h3 { color: var(--blue); margin-bottom: 5px; }
-.timeline-item .job-duration { font-size: 0.9rem; color: #555; margin-bottom: 10px; display: block; }
-.timeline-item p, .timeline-item ul li { color: var(--text-dark); line-height: 1.5; }
+/* Text inside timeline */
+.timeline-item h3 {
+    color: var(--blue);
+    margin-bottom: 5px;
+}
 
-/* Responsive: stack timeline on smaller screens */
+.timeline-item .job-duration {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.timeline-item p, .timeline-item ul li {
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Education vs Work color */
+.timeline.education .timeline-item::before { background-color: var(--skyblue); }
+.timeline.work .timeline-item::before { background-color: var(--blue); }
+
+/* Responsive timeline */
 @media screen and (max-width: 768px) {
     .timeline::after { left: 20px; }
     .timeline-item {
@@ -313,9 +325,6 @@ nav .navlinks li a:hover::after {
     .timeline-item.right { left: 0; }
     .timeline-item.left::before, .timeline-item.right::before { left: 0; right: auto; }
 }
-
-
-
 
 /* ================= Portfolio ================= */
 .portfolio-container{
