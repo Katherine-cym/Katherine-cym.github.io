@@ -192,6 +192,10 @@ nav .navlinks li a:hover::after {
     margin-bottom: 20px;
 }
 
+.wrapper, .skills-container, .portfolio-container, .hero-header {
+    padding-top: 100px;
+}
+
 /* ================= Skills ================= */
 .skills-container{
     max-width: 1000px;

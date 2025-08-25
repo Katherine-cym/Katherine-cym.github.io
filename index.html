@@ -180,24 +180,41 @@
     </section>
 
     <script>
-    // Select all nav links
     const navLinks = document.querySelectorAll('nav .navlinks li a');
+    const headerHeight = document.querySelector('header').offsetHeight;
 
-    // Add scroll event listener
+    //scroll
+    function smoothScroll(targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const viewportHeight = window.innerHeight;
+        const offset = target.getBoundingClientRect().top + window.pageYOffset - viewportHeight / 3;
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+        });
+    }
+
+    //navigation scroll
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            smoothScroll(targetId);
+        });
+    });
+
+    // highlight nav bar
     window.addEventListener('scroll', () => {
         let current = '';
-
-        // Loop through all sections to find which is currently visible
         document.querySelectorAll('section').forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-
-            if (pageYOffset >= sectionTop - 60) {
+            if (window.pageYOffset + window.innerHeight / 3 >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
 
-        // Remove active class from all links and add to current
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -206,6 +223,7 @@
         });
     });
     </script>
+
 
 </body>
 </html>
