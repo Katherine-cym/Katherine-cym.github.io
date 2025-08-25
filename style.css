@@ -4,14 +4,14 @@
     --purple-light:#30192d;
     --dark-blue:#012677;
     --blue:#5c65c0;
-    --skyblue:#00b4fc;
+    --skyblue:hsl(197, 100%, 49%);
     --light-blue:#005bc5;
     --dark-pink:#f64c57;
     --dark-magenta:#e21b5a;
     --light-green:#61e2c2;
     --light-purple:#d9abff;
     --primary-bg:#E6CEAC;
-    --primary-light:#fff;
+    --primary-light:#f8d9ae;
     --primary-dark:#5c65c0;
     --text-dark:#222;
     --text-light:#fff;
@@ -39,10 +39,10 @@ header{
     justify-content: space-between;
     align-items:center;
     flex-wrap:wrap;
-    position: fixed; /* 固定导航栏 */
+    position: fixed; /* fix nav bar */
     top: 0;
     width: 100%;
-    background-color: #f4debf; /* 导航栏背景色 */
+    background-color: #f4debf; 
     z-index: 999;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -90,7 +90,7 @@ nav .navlinks li a{
 nav .navlinks li a.active {
     color: var(--text-dark);
     font-weight: 600;
-    background-color: #f4debf; /* 高亮背景色 */
+    background-color: #f4debf; /
     border-radius: 5px;
     transition: 0.3s;
 }
@@ -111,9 +111,9 @@ nav .navlinks li a:hover::after {
 }
 
 /* ================= Sections ================= */
-/* 给正文内容增加顶部 padding，避免被固定导航栏遮挡 */
+
 .wrapper, .skills-container, .portfolio-container, .hero-header {
-    padding-top: 120px; /* 根据导航栏高度调整 */
+    padding-top: 120px; 
 }
 
 /* ================= Hero Section ================= */
@@ -180,7 +180,7 @@ nav .navlinks li a:hover::after {
 }
 
 .social i:hover{
-    color: var(--skyblue);
+    color: var(--blue);
     transform: rotate(360deg);
 }
 
@@ -298,7 +298,7 @@ nav .navlinks li a:hover::after {
 }
 
 /* Optional: Different colors for Education vs Internships */
-.timeline.education .timeline-item::before { background-color: var(--skyblue); }
+.timeline.education .timeline-item::before { background-color: var(--blue); }
 .timeline.work .timeline-item::before { background-color: var(--blue); }
 
 /* ================= Portfolio ================= */
@@ -345,4 +345,4 @@ nav .navlinks li a:hover::after {
 
 /* ================= Contact ================= */
 .wrapper a{ color: var(--blue); }
-.wrapper a:hover{ color: var(--skyblue); }
+.wrapper a:hover{ color: var(--blue); }
