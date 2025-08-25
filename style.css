@@ -17,6 +17,8 @@
     --text-light:#fff;
 }
 
+
+
 /* ================= Reset ================= */
 *{
     box-sizing: border-box;
@@ -82,6 +84,17 @@ nav .navlinks li a{
     font-weight: 500;
     position: relative;
 }
+
+
+/* Navigation active link highlight */
+nav .navlinks li a.active {
+    color: var(--skyblue);
+    font-weight: 600;
+    border-bottom: 2px solid var(--skyblue);
+    padding-bottom: 3px;
+    transition: 0.3s;
+}
+
 
 nav .navlinks li a::after {
     content: "";
@@ -216,6 +229,117 @@ nav .navlinks li a:hover::after {
     background: var(--blue);
     color: #fff;
 }
+/* ================= Experience ================= */
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--blue);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Timeline item */
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 50%;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--primary-light);
+}
+
+/* Hover effect */
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* Position left/right */
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+/* Timeline circle */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+    background-color: var(--blue);
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+/* Text inside item */
+.timeline-item h3 {
+    color: var(--blue);
+    margin-bottom: 5px;
+}
+
+.timeline-item .job-duration {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.timeline-item p, .timeline-item ul li {
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Responsive: stack timeline on smaller screens */
+@media screen and (max-width: 768px) {
+    .timeline::after { left: 20px; }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 25px;
+    }
+    .timeline-item.right { left: 0; }
+    .timeline-item.left::before, .timeline-item.right::before {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* Optional: Different colors for Education vs Internships */
+.timeline.education .timeline-item::before {
+    background-color: var(--skyblue);  /* education items circle color */
+}
+
+.timeline.work .timeline-item::before {
+    background-color: var(--blue);  /* internship/work items circle color */
+}
+
+
 
 /* ================= Portfolio ================= */
 .portfolio-container{
