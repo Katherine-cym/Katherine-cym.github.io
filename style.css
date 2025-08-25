@@ -230,13 +230,19 @@ nav .navlinks li a:hover::after {
     color: #fff;
 }
 /* ================= Experience ================= */
-
 /* Timeline Container */
 .timeline {
     position: relative;
     max-width: 1000px;
-    margin: 40px auto;
     padding: 0 20px;
+}
+
+/* Space between timelines */
+.timeline.work {
+    margin-bottom: 60px;
+}
+.timeline.education {
+    margin-top: 40px;
 }
 
 /* Vertical line in the middle */
@@ -269,13 +275,8 @@ nav .navlinks li a:hover::after {
 }
 
 /* Position left/right */
-.timeline-item.left {
-    left: 0;
-}
-
-.timeline-item.right {
-    left: 50%;
-}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
 
 /* Timeline circle */
 .timeline-item::before {
@@ -286,34 +287,20 @@ nav .navlinks li a:hover::after {
     border-radius: 50%;
     top: 20px;
     z-index: 1;
-    background-color: var(--blue);
 }
 
-.timeline-item.left::before {
-    right: -10px;
-}
+/* Circle colors for different timelines */
+.timeline.work .timeline-item::before { background-color: var(--blue); }
+.timeline.education .timeline-item::before { background-color: var(--skyblue); }
 
-.timeline-item.right::before {
-    left: -10px;
-}
+/* Circle positioning */
+.timeline-item.left::before { right: -10px; }
+.timeline-item.right::before { left: -10px; }
 
 /* Text inside item */
-.timeline-item h3 {
-    color: var(--blue);
-    margin-bottom: 5px;
-}
-
-.timeline-item .job-duration {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.timeline-item p, .timeline-item ul li {
-    color: var(--text-dark);
-    line-height: 1.5;
-}
+.timeline-item h3 { color: var(--blue); margin-bottom: 5px; }
+.timeline-item .job-duration { font-size: 0.9rem; color: #555; margin-bottom: 10px; display: block; }
+.timeline-item p, .timeline-item ul li { color: var(--text-dark); line-height: 1.5; }
 
 /* Responsive: stack timeline on smaller screens */
 @media screen and (max-width: 768px) {
@@ -324,20 +311,9 @@ nav .navlinks li a:hover::after {
         padding-right: 25px;
     }
     .timeline-item.right { left: 0; }
-    .timeline-item.left::before, .timeline-item.right::before {
-        left: 0;
-        right: auto;
-    }
+    .timeline-item.left::before, .timeline-item.right::before { left: 0; right: auto; }
 }
 
-/* Optional: Different colors for Education vs Internships */
-.timeline.education .timeline-item::before {
-    background-color: var(--skyblue);  /* education items circle color */
-}
-
-.timeline.work .timeline-item::before {
-    background-color: var(--blue);  /* internship/work items circle color */
-}
 
 
 
