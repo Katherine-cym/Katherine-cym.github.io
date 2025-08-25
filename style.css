@@ -1,45 +1,45 @@
 /* ================= Root Colors ================= */
-:root{
-    --purple:#2F192E;
-    --purple-light:#30192d;
-    --dark-blue:#012677;
-    --blue:#5c65c0;
-    --skyblue:hsl(197, 100%, 49%);
-    --light-blue:#005bc5;
-    --dark-pink:#f64c57;
-    --dark-magenta:#e21b5a;
-    --light-green:#61e2c2;
-    --light-purple:#d9abff;
-    --primary-bg:#E6CEAC;
-    --primary-light:#f8d9ae;
-    --primary-dark:#5c65c0;
-    --text-dark:#222;
-    --text-light:#fff;
+:root {
+    --purple: #2F192E;
+    --purple-light: #30192d;
+    --dark-blue: #012677;
+    --blue: #5c65c0;
+    --skyblue: hsl(197, 100%, 49%);
+    --light-blue: #005bc5;
+    --dark-pink: #f64c57;
+    --dark-magenta: #e21b5a;
+    --light-green: #61e2c2;
+    --light-purple: #d9abff;
+    --primary-bg: #E6CEAC;
+    --primary-light: #f8d9ae;
+    --primary-dark: #5c65c0;
+    --text-dark: #222;
+    --text-light: #fff;
 }
 
 /* ================= Reset ================= */
-*{
+* {
     box-sizing: border-box;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     font-family: poppins, sans-serif;
 }
 
 /* ================= Body ================= */
-body{
+body {
     overflow-x: hidden;
     background-color: var(--primary-bg);
 }
 
 /* ================= Header / Navigation ================= */
-header{
+header {
     padding: 10px 50px;
     display: flex;
     justify-content: space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    position: fixed; /* fix nav bar */
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: #f4debf; 
@@ -47,12 +47,12 @@ header{
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.logo{
-    display:flex;
+.logo {
+    display: flex;
     align-items: center;
 }
 
-.logo-circle{
+.logo-circle {
     height: 45px;
     width: 45px;
     background-color: #6c74d3;
@@ -67,19 +67,19 @@ header{
     text-align: center;
 }
 
-.logo-text{
+.logo-text {
     font-size: 24px;
     font-weight: 500;
     color: var(--text-dark);
 }
 
-nav .navlinks{
+nav .navlinks {
     list-style-type: none;
     display: flex;
     gap: 2rem;
 }
 
-nav .navlinks li a{
+nav .navlinks li a {
     color: var(--text-dark);
     font-weight: 500;
     position: relative;
@@ -110,52 +110,61 @@ nav .navlinks li a:hover::after {
     width: 100%;
 }
 
-/* ================= Sections ================= */
-
+/* ================= Sections – Global Padding ================= */
 .wrapper, .skills-container, .portfolio-container, .hero-header {
-    padding-top: 120px; 
+    max-width: 1200px;       /* Maximum width */
+    margin: 0 auto;          /* Center content */
+    padding: 120px 40px 40px 40px;  /* Top 120px, left/right 40px, bottom 40px */
+    box-sizing: border-box;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 768px) {
+    .wrapper, .skills-container, .portfolio-container, .hero-header {
+        padding: 120px 20px 40px 20px;  /* Reduce left/right padding */
+    }
 }
 
 /* ================= Hero Section ================= */
-.hero-header{
-    width:100%;
+.hero-header {
+    width: 100%;
     min-height: 100vh;
     background: var(--primary-bg);
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4rem 20px 2rem 20px;
+    padding: 120px 40px 40px 40px;
 }
 
-.hero-text h5{
+.hero-text h5 {
     color: var(--text-dark);
     font-size: 25px;
 }
 
-.hero-text h5 span{
+.hero-text h5 span {
     color: var(--blue);
     font-size: 2rem;
 }
 
-.hero-text h1{
+.hero-text h1 {
     color: var(--blue);
     font-size: 2.5rem;
     margin: 10px 0;
 }
 
-.hero-text p{
+.hero-text p {
     color: var(--text-dark);
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.btn-group{
+.btn-group {
     margin: 30px 0;
 }
 
-.btn{
+.btn {
     color: var(--text-dark);
     background-color: var(--primary-bg);
     padding: 12px 25px;
@@ -166,47 +175,47 @@ nav .navlinks li a:hover::after {
     transition: 0.3s;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: var(--blue);
     color: #fff;
 }
 
 /* Social Icons */
-.social i{
+.social i {
     color: var(--blue);
     font-size: 25px;
     margin-right: 10px;
     transition: 0.5s;
 }
 
-.social i:hover{
+.social i:hover {
     color: var(--blue);
     transform: rotate(360deg);
 }
 
 /* ================= Skills ================= */
-.skills-container{
+.skills-container {
     max-width: 1000px;
     margin: 60px auto;
-    padding: 20px;
+    padding: 120px 40px 40px 40px;
 }
 
-.skills-category{
+.skills-category {
     margin-bottom: 2rem;
 }
 
-.skills-category h3{
+.skills-category h3 {
     color: var(--blue);
     margin-bottom: 1rem;
 }
 
-.skills-list{
-    display:flex;
+.skills-list {
+    display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
 }
 
-.skill-tag{
+.skill-tag {
     background: var(--primary-light);
     border: 1px solid var(--blue);
     border-radius: 20px;
@@ -217,22 +226,20 @@ nav .navlinks li a:hover::after {
     transition: 0.2s;
 }
 
-.skill-tag:hover{
+.skill-tag:hover {
     background: var(--blue);
     color: #fff;
 }
 
-/* ================= Experience ================= */
-
-/* Timeline Container */
+/* ================= Experience / Timeline ================= */
 .timeline {
     position: relative;
     max-width: 1000px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 40px;  /* Add left/right spacing */
+    box-sizing: border-box;
 }
 
-/* Vertical line in the middle */
 .timeline::after {
     content: '';
     position: absolute;
@@ -244,7 +251,6 @@ nav .navlinks li a:hover::after {
     margin-left: -2px;
 }
 
-/* Timeline item */
 .timeline-item {
     padding: 20px 30px;
     position: relative;
@@ -255,17 +261,14 @@ nav .navlinks li a:hover::after {
     background-color: var(--primary-light);
 }
 
-/* Hover effect */
 .timeline-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
-/* Position left/right */
 .timeline-item.left { left: 0; }
 .timeline-item.right { left: 50%; }
 
-/* Timeline circle */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -280,12 +283,10 @@ nav .navlinks li a:hover::after {
 .timeline-item.left::before { right: -10px; }
 .timeline-item.right::before { left: -10px; }
 
-/* Text inside item */
 .timeline-item h3 { color: var(--blue); margin-bottom: 5px; }
 .timeline-item .job-duration { font-size: 0.9rem; color: #555; margin-bottom: 10px; display: block; }
 .timeline-item p, .timeline-item ul li { color: var(--text-dark); line-height: 1.5; }
 
-/* Responsive */
 @media screen and (max-width: 768px){
     .timeline::after { left: 20px; }
     .timeline-item {
@@ -297,24 +298,20 @@ nav .navlinks li a:hover::after {
     .timeline-item.left::before, .timeline-item.right::before { left: 0; right: auto; }
 }
 
-/* Optional: Different colors for Education vs Internships */
-.timeline.education .timeline-item::before { background-color: var(--blue); }
-.timeline.work .timeline-item::before { background-color: var(--blue); }
-
 /* ================= Portfolio ================= */
-.portfolio-container{
+.portfolio-container {
     max-width: 1200px;
     margin: 60px auto;
-    padding: 20px;
+    padding: 120px 40px 40px 40px;
 }
 
-.portfolio-grid{
-    display:grid;
+.portfolio-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 20px;
 }
 
-.project-box{
+.project-box {
     background: var(--primary-light);
     padding: 20px;
     border-radius: 12px;
@@ -322,19 +319,19 @@ nav .navlinks li a:hover::after {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-box:hover{
+.project-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.project-tags{
+.project-tags {
     margin-top: 1rem;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     gap: .5rem;
 }
 
-.project-tag{
+.project-tag {
     background: var(--light-purple);
     color: var(--text-dark);
     font-size: 0.8rem;
@@ -344,5 +341,5 @@ nav .navlinks li a:hover::after {
 }
 
 /* ================= Contact ================= */
-.wrapper a{ color: var(--blue); }
-.wrapper a:hover{ color: var(--blue); }
+.wrapper a { color: var(--blue); }
+.wrapper a:hover { color: var(--blue); }
