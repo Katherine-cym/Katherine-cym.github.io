@@ -294,13 +294,18 @@ nav .navlinks li a:hover::after {
 .timeline-item .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    line-height: 2.5rem; /* Avoid tag overlap */
-    margin-bottom: 10px;
+    gap: 0.75rem;
+    line-height: 2rem; /* Avoid tag overlap */
+    margin-bottom: 15px;
 }
 
 .timeline-item .skills-tags .skill-tag {
     display: inline-block;
+    padding: 6px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 /* Responsive */
