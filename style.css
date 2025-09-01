@@ -152,11 +152,18 @@ nav .navlinks li a:hover::after {
 }
 
 .about-image img {
-    width: 300px;           /* diameter = 2 * radius */
-    height: 300px;
-    border-radius: 50%;     /* makes it a circle */
-    object-fit: cover;      /* ensures the image fills the circle */
-    object-position: center; /* keeps subject centered */
+    width: 25%;             /* 1/4 width on desktop */
+    aspect-ratio: 1 / 1;    /* keep it square */
+    border-radius: 50%;     /* circle */
+    object-fit: cover;      /* fill nicely */
+    object-position: top;   /* keep top, crop bottom */
+}
+
+/* Mobile version */
+@media screen and (max-width: 768px) {
+    .about-image img {
+        width: 33.33%;      /* 1/3 width on mobile */
+    }
 }
 
 
