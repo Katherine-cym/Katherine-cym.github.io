@@ -299,6 +299,11 @@ nav .navlinks li a:hover::after {
     align-items: center;
     justify-content: center;
 }
+.timeline-item.right .timeline-dot {
+    left: auto;       /* unset left */
+    right: -25px;     /* align to the right of timeline */
+}
+
 
 .timeline-dot img {
     width: 100%;               /* fill circle */
