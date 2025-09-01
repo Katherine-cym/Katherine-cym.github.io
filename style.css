@@ -150,7 +150,7 @@ nav .navlinks li a:hover::after {
     justify-content: center;
     overflow: hidden;       
     border-radius: 10px;    
-    max-height: 250px;  
+    max-height: 800px;  
 }
 
 .about-image img {
