@@ -152,7 +152,8 @@ nav .navlinks li a:hover::after {
 
 .about-image img {
     max-width: 300px; /* Adjust as needed */
-    width: 100%;
+    width: auto
+    height: 200px; 
     border-radius: 10px;
     object-fit: cover;
 }
@@ -286,8 +287,8 @@ nav .navlinks li a:hover::after {
     box-sizing: border-box;
 }
 .timeline-dot {
-    width: 10px;               /* smaller size for timeline */
-    height: 10px;
+    width: 50px;               /* smaller size for timeline */
+    height: 50px;
     border-radius: 50%;        /* make it circular */
     overflow: hidden;          /* crop image to circle */
     border: 2px solid #ccc;    /* optional border */
