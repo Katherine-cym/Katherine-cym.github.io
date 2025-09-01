@@ -286,15 +286,15 @@ nav .navlinks li a:hover::after {
     box-sizing: border-box;
 }
 .timeline-dot {
-    width: 60px;               /* smaller size for timeline */
-    height: 60px;
+    width: 10px;               /* smaller size for timeline */
+    height: 10px;
     border-radius: 50%;        /* make it circular */
     overflow: hidden;          /* crop image to circle */
     border: 2px solid #ccc;    /* optional border */
     background-color: #fff;    /* fallback background */
     position: absolute;
     left: -30px;               /* center over timeline line */
-    top: 0;
+    top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
