@@ -148,17 +148,17 @@ nav .navlinks li a:hover::after {
     flex: 1;
     display: flex;
     justify-content: center;
-    overflow: hidden;       
-    border-radius: 10px;    
-    max-height: 900px;  
+    align-items: flex-start;    /* center the image */
 }
 
 .about-image img {
-    width: 100%;            
-    height: auto;          
-    object-fit: cover;      
-    object-position: top;   
+    width: 600px;           /* diameter = 2 * radius */
+    height: 600px;
+    border-radius: 50%;     /* makes it a circle */
+    object-fit: cover;      /* ensures the image fills the circle */
+    object-position: top; /* keeps subject centered */
 }
+
 
 .about-text {
     flex: 1;
