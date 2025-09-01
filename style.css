@@ -152,11 +152,11 @@ nav .navlinks li a:hover::after {
 }
 
 .about-image img {
-    width: 450px;           /* diameter = 2 * radius */
-    height: 450px;
+    width: 300px;           /* diameter = 2 * radius */
+    height: 300px;
     border-radius: 50%;     /* makes it a circle */
     object-fit: cover;      /* ensures the image fills the circle */
-    object-position: top; /* keeps subject centered */
+    object-position: center; /* keeps subject centered */
 }
 
 
