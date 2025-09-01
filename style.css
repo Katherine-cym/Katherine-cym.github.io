@@ -148,14 +148,16 @@ nav .navlinks li a:hover::after {
     flex: 1;
     display: flex;
     justify-content: center;
+    overflow: hidden;       
+    border-radius: 10px;    
+    max-height: 250px;  
 }
 
 .about-image img {
-    max-width: 300px; /* Adjust as needed */
-    width: auto
-    height: 200px; 
-    border-radius: 10px;
-    object-fit: cover;
+    width: 100%;            
+    height: auto;          
+    object-fit: cover;      
+    object-position: top;   
 }
 
 .about-text {
@@ -287,8 +289,8 @@ nav .navlinks li a:hover::after {
     box-sizing: border-box;
 }
 .timeline-dot {
-    width: 50px;               /* smaller size for timeline */
-    height: 50px;
+    width: 60px;               /* smaller size for timeline */
+    height: 60px;
     border-radius: 50%;        /* make it circular */
     overflow: hidden;          /* crop image to circle */
     border: 2px solid #ccc;    /* optional border */
