@@ -152,7 +152,7 @@ nav .navlinks li a:hover::after {
 }
 
 .about-image img {
-    width: 30%;             /* ratio width on desktop */
+    width: 40%;             /* ratio width on desktop */
     aspect-ratio: 1 / 1;    /* keep it square */
     border-radius: 50%;     /* circle */
     object-fit: cover;      /* fill nicely */
@@ -162,14 +162,14 @@ nav .navlinks li a:hover::after {
 /* Mobile version */
 @media screen and (max-width: 768px) {
     .about-image img {
-        width: 50%;      /* 1/3 width on mobile */
+        width: 50%;      /* 1/2 width on mobile */
     }
 }
 
 
 .about-text {
     flex: 1;
-    padding-left: 50px; /* Creates spacing from the image */
+    padding-left: 40px; /* Creates spacing from the image */
 }
 
 .about-text h2 {
